@@ -177,5 +177,18 @@ pub fn character_reserve() -> Json<CharacterListResponse<'static>> {
     })
 }
 
-
 //POST /player/reserveName
+
+#[derive(Serialize)]
+pub struct AuthorizeCharacterResponse<'r> {
+    token: &'r str,
+    success: bool,
+}
+
+#[get("/authorizeCharacter")]
+pub fn authorize_character() -> Json<AuthorizeCharacterResponse<'static>> {
+    Json(AuthorizeCharacterResponse {
+        token: "test",
+        success: true,
+    })
+}

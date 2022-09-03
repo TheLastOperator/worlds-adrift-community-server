@@ -15,6 +15,7 @@ fn rocket() -> _ {
             crate::server::server_status,
             crate::character::character_list,
             crate::character::character_reserve,
+            crate::character::authorize_character,
         ],
     )
 }
